@@ -1,0 +1,42 @@
+﻿<div class="card">
+    <h4 class="card-header">Register</h4>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="username">Nome</label>
+                <input type="text" formControlnome="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Campo obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" formControlnome="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Campo obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefone</label>
+                <input type="text" formControlnome="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                    <div *ngIf="f.phone.errors.required">Campo obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" formControlnome="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Campo obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button mat-raised-button color="primary" [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Registrar
+                </button>
+                <a routerLink="../login" class="btn btn-link">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
